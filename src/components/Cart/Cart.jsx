@@ -33,6 +33,7 @@ const Cart = (props) => {
             <button onClick={props.handleClearCart} className="btn-clear-cart">
                 <span>Clear Cart</span> <FontAwesomeIcon icon={faTrashAlt} />
             </button>
+            {props.children}
         </div>
     );
 };

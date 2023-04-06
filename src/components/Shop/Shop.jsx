@@ -6,6 +6,9 @@ import {
 } from "../../utilities/fakedb";
 import Cart from "../Cart/Cart";
 import Products from "../Products/Products";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 import "./Shop.css";
 
@@ -64,7 +67,11 @@ const Shop = () => {
                 ))}
             </div>
             <div className="cart-container">
-                <Cart handleClearCart={handleClearCart} cart={cart} />
+                <Cart handleClearCart={handleClearCart} cart={cart}>
+                    <Link className="proceed-link" to="/orders">
+                        <button className="btn-proceed">Review Orders</button>
+                    </Link>
+                </Cart>
             </div>
         </div>
     );
